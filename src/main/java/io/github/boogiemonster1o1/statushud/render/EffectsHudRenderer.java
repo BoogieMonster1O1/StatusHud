@@ -56,9 +56,9 @@ public final class EffectsHudRenderer {
                         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                         float f = 1.0F;
                         if (statusEffectInstance.isAmbient()) {
-                            StatusHud.hudInstance.drawTexture(stack, k, l, 165, 166, 24, 24);
+                            StatusHud.hudInstance.drawTexture(stack, k - 28, l, 165, 166, 24, 24);
                         } else {
-                            StatusHud.hudInstance.drawTexture(stack, k, l, 141, 166, 24, 24);
+                            StatusHud.hudInstance.drawTexture(stack, k - 28, l, 141, 166, 24, 24);
                             if (statusEffectInstance.getDuration() <= 200) {
                                 int m = 10 - statusEffectInstance.getDuration() / 20;
                                 f = MathHelper.clamp((float) statusEffectInstance.getDuration() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F) + MathHelper.cos((float) statusEffectInstance.getDuration() * 3.1415927F / 5.0F) * MathHelper.clamp((float) m / 10.0F * 0.25F, 0.0F, 0.25F);
@@ -72,7 +72,7 @@ public final class EffectsHudRenderer {
                         list.add(() -> {
                             MinecraftClient.getInstance().getTextureManager().bindTexture(sprite.getAtlas().getId());
                             RenderSystem.color4f(1.0F, 1.0F, 1.0F, finalF);
-                            DrawableHelper.drawSprite(stack, finalK + 3, finalL + 3, StatusHud.hudInstance.getZOffset(), 18, 18, sprite);
+                            DrawableHelper.drawSprite(stack, finalK + 3 - 28, finalL + 3, StatusHud.hudInstance.getZOffset(), 18, 18, sprite);
                         });
                     }
                 }
