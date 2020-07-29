@@ -23,7 +23,7 @@
       "io.github.boogiemonster1o1.statushud.StatusHud"
     ],
     "modmenu": [
-      "io.github.boogiemonster1o1.statushud.StatusHudModMenuImpl"
+      "io.github.boogiemonster1o1.statushud.util.StatusHudModMenuImpl"
     ]
   },
   "mixins": [

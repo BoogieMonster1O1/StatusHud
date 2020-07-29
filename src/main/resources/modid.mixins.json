@@ -4,11 +4,11 @@
   "package": "io.github.boogiemonster1o1.statushud.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BossbarHudMixin"
   ],
   "client": [
     "InGameHudAccessMixin",
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "BossbarHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

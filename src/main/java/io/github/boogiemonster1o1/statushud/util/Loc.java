@@ -1,4 +1,4 @@
-package io.github.boogiemonster1o1.statushud;
+package io.github.boogiemonster1o1.statushud.util;
 
 public @interface Loc {
     enum Armor {
