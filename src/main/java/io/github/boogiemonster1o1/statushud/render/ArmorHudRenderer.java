@@ -1,17 +1,10 @@
 package io.github.boogiemonster1o1.statushud.render;
 
-import io.github.boogiemonster1o1.statushud.StatusHud;
-import io.github.boogiemonster1o1.statushud.mixin.BossbarHudMixin;
-import io.github.boogiemonster1o1.statushud.mixin.InGameHudAccessMixin;
+import io.github.boogiemonster1o1.statushud.util.RenderUtils;
 
-import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.hud.ClientBossBar;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -24,7 +17,7 @@ public final class ArmorHudRenderer {
             int p;
             int q;
             AtomicInteger topOffset = new AtomicInteger();
-            getBossBars().forEach((uuid, bossbar) -> {
+            RenderUtils.getBossBars().forEach((uuid, bossbar) -> {
                 if(topOffset.get() >= 80) {
                     return;
                 }
@@ -32,7 +25,7 @@ public final class ArmorHudRenderer {
             });
             for(p = 0; p < 4; ++p) {
                 q = i - 90 + p * 20 + 2;
-                renderHotbarItem(q + 50, topOffset.get(), tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                RenderUtils.renderHotbarItem(q + 50, topOffset.get(), tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
             }
         }
     }
@@ -45,7 +38,7 @@ public final class ArmorHudRenderer {
             int r = j - 16 - 3;;
             for(int p = 0; p < 4; ++p) {
                 q = i + 145 + p * 20 + 2;
-                renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
             }
         }
     }
@@ -57,16 +50,8 @@ public final class ArmorHudRenderer {
             int r = j - 16 - 3;
             for(int p = 0; p < 4; ++p) {
                 q = 15 + p * 20 + 2;
-                renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
             }
         }
-    }
-
-    private static void renderHotbarItem(int i, int j, float tickDelta, PlayerEntity playerEntity, ItemStack itemStack) {
-        ((InGameHudAccessMixin) StatusHud.hudInstance).invokeRenderHotbarItem(i, j, tickDelta, playerEntity, itemStack);
-    }
-
-    private static Map<UUID, ClientBossBar> getBossBars() {
-        return ((BossbarHudMixin) ((InGameHudAccessMixin) StatusHud.hudInstance).getBossBarHud()).getBossBars();
     }
 }

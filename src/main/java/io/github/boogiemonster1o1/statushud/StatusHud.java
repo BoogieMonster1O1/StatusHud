@@ -38,9 +38,9 @@ public class StatusHud implements ClientModInitializer {
             }
             if(config.effectsEnabled) {
                 if(config.effectsLocation == Loc.Effects.LEFT) {
-                    EffectsHudRenderer.renderEffectsAtLeft(tickDelta);
+                    EffectsHudRenderer.renderEffectsAtLeft(matrixStack, tickDelta);
                 } else if(config.effectsLocation == Loc.Effects.RIGHT) {
-                    EffectsHudRenderer.renderEffectsAtRight(tickDelta);
+                    EffectsHudRenderer.renderEffectsAtRight(matrixStack, tickDelta);
                 }
             }
         });
