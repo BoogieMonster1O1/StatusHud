@@ -1,5 +1,7 @@
 {
   "text.autoconfig.statushud.title": "StatusHud Configuration",
   "text.autoconfig.statushud.option.armorLocation": "Location of armor on screen",
-  "text.autoconfig.statushud.option.armorEnabled": "Show armor on screen"
+  "text.autoconfig.statushud.option.armorEnabled": "Show armor on screen",
+  "text.autoconfig.statushud.option.effectsLocation": "Location of status effects on screen",
+  "text.autoconfig.statushud.option.effectsEnabled": "Show status effects on screen"
 }

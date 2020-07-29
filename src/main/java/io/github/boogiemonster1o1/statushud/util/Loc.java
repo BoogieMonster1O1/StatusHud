@@ -6,4 +6,9 @@ public @interface Loc {
         LEFT,
         RIGHT,
     }
+
+    enum Effects {
+        LEFT,
+        RIGHT
+    }
 }

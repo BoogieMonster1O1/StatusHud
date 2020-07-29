@@ -10,4 +10,8 @@ public class StatusHudConfig implements ConfigData {
     public boolean armorEnabled = true;
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public Loc.Armor armorLocation = Loc.Armor.TOP;
+
+    public boolean effectsEnabled = false;
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    public Loc.Effects effectsLocation = Loc.Effects.LEFT;
 }
