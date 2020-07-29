@@ -17,7 +17,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
-public class StatusHudRenderer {
+public class ArmorHudRenderer {
     public static void renderArmorAtTop(float tickDelta) {
         if (MinecraftClient.getInstance().player != null) {
             int i = MinecraftClient.getInstance().getWindow().getScaledWidth() / 2;

@@ -1,7 +1,7 @@
 package io.github.boogiemonster1o1.statushud;
 
 import io.github.boogiemonster1o1.statushud.config.StatusHudConfig;
-import io.github.boogiemonster1o1.statushud.render.StatusHudRenderer;
+import io.github.boogiemonster1o1.statushud.render.ArmorHudRenderer;
 import io.github.boogiemonster1o1.statushud.util.Loc;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
@@ -28,11 +28,11 @@ public class StatusHud implements ClientModInitializer {
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             if(config.armorEnabled) {
                 if(config.armorLocation == Loc.Armor.TOP) {
-                    StatusHudRenderer.renderArmorAtTop(tickDelta);
+                    ArmorHudRenderer.renderArmorAtTop(tickDelta);
                 } else if(config.armorLocation == Loc.Armor.RIGHT) {
-                    StatusHudRenderer.renderArmorAtBottomRight(tickDelta);
+                    ArmorHudRenderer.renderArmorAtBottomRight(tickDelta);
                 } else if(config.armorLocation == Loc.Armor.LEFT) {
-                    StatusHudRenderer.renderArmorAtBottomLeft(tickDelta);
+                    ArmorHudRenderer.renderArmorAtBottomLeft(tickDelta);
                 }
             }
         });
