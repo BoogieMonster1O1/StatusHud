@@ -7,7 +7,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "statushud")
 public class StatusHudConfig implements ConfigData {
+    public boolean armorEnabled = true;
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public Loc.Armor armorLocation = Loc.Armor.TOP;
-    public boolean armorEnabled = true;
 }

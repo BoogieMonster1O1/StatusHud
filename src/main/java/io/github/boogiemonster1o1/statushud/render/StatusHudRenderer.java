@@ -44,7 +44,7 @@ public class StatusHudRenderer {
             int q;
             int r = j - 16 - 3;;
             for(int p = 0; p < 4; ++p) {
-                q = i + p * 20 + 2;
+                q = i + 145 + p * 20 + 2;
                 renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
             }
         }
@@ -54,9 +54,9 @@ public class StatusHudRenderer {
         if (MinecraftClient.getInstance().player != null) {
             int j = MinecraftClient.getInstance().getWindow().getScaledHeight();
             int q;
-            int r = j - 16 - 3;;
+            int r = j - 16 - 3;
             for(int p = 0; p < 4; ++p) {
-                q = 110 + p * 20 + 2;
+                q = 15 + p * 20 + 2;
                 renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
             }
         }

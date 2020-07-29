@@ -1,0 +1,5 @@
+{
+  "text.autoconfig.statushud.title": "StatusHud Configuration",
+  "text.autoconfig.statushud.option.armorLocation": "Location of armor on screen",
+  "text.autoconfig.statushud.option.armorEnabled": "Show armor on screen"
+}
