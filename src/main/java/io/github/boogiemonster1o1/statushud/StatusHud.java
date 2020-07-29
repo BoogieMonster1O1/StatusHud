@@ -19,12 +19,13 @@ public class StatusHud implements ClientModInitializer {
     public static final String MOD_ID = "statushud";
 
     public static InGameHud hudInstance;
+    public static StatusHudConfig config;
 
     @Override
     public void onInitializeClient() {
         AutoConfig.register(StatusHudConfig.class, JanksonConfigSerializer::new);
 
-        StatusHudConfig config = AutoConfig.getConfigHolder(StatusHudConfig.class).getConfig();
+        StatusHud.config = AutoConfig.getConfigHolder(StatusHudConfig.class).getConfig();
 
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             if(config.armorEnabled) {
@@ -38,9 +39,7 @@ public class StatusHud implements ClientModInitializer {
             }
             if(config.effectsEnabled) {
                 if(config.effectsLocation == Loc.Effects.LEFT) {
-                    EffectsHudRenderer.renderEffectsAtLeft(matrixStack, tickDelta);
-                } else if(config.effectsLocation == Loc.Effects.RIGHT) {
-                    EffectsHudRenderer.renderEffectsAtRight(matrixStack, tickDelta);
+                    EffectsHudRenderer.renderEffects(matrixStack, tickDelta);
                 }
             }
         });
