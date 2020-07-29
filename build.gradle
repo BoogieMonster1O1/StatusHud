@@ -15,12 +15,14 @@ group = project.maven_group
 
 dependencies {
 	minecraft("com.mojang:minecraft:1.16.1")
-    	mappings("net.fabricmc:yarn:1.16.1+build.21:v2")
-    	modImplementation("net.fabricmc:fabric-loader:0.9.0+build.204")
+	mappings("net.fabricmc:yarn:1.16.1+build.21:v2")
+	modImplementation("net.fabricmc:fabric-loader:0.9.0+build.204")
 	modApi("net.fabricmc.fabric-api:fabric-api:0.16.0+build.384-1.16.1")
 	modApi("io.github.prospector:modmenu:1.14.5+build.30")
 	modApi("me.shedaniel.cloth:config-2:4.6.0")
+	include("me.shedaniel.cloth:config-2:4.6.0")
 	modApi("me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable")
+	include("me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable")
 	modRuntime("me.shedaniel:RoughlyEnoughItems:4.10.3")
 }
 
