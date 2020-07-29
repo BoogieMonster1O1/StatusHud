@@ -24,7 +24,7 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public final class EffectsHudRenderer {
-    public static void renderEffects(MatrixStack stack, float tickDelta) {
+    public static void renderEffects(MatrixStack stack) {
         if(MinecraftClient.getInstance().player != null) {
             Collection<StatusEffectInstance> collection = MinecraftClient.getInstance().player.getStatusEffects();
             if (!collection.isEmpty()) {

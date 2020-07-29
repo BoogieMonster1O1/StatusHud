@@ -29,17 +29,21 @@ public class StatusHud implements ClientModInitializer {
 
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             if(config.armorEnabled) {
-                if(config.armorLocation == Loc.Armor.TOP) {
+                if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP) {
                     ArmorHudRenderer.renderArmorAtTop(tickDelta);
-                } else if(config.armorLocation == Loc.Armor.RIGHT) {
+                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_RIGHT) {
                     ArmorHudRenderer.renderArmorAtBottomRight(tickDelta);
-                } else if(config.armorLocation == Loc.Armor.LEFT) {
+                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_LEFT) {
                     ArmorHudRenderer.renderArmorAtBottomLeft(tickDelta);
+                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_LEFT) {
+                    ArmorHudRenderer.renderArmorVerticalAtLeft(matrixStack, tickDelta);
+                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_RIGHT) {
+                    ArmorHudRenderer.renderArmorVerticalAtRight(matrixStack, tickDelta);
                 }
             }
             if(config.effectsEnabled) {
-                if(config.effectsLocation == Loc.Effects.LEFT) {
-                    EffectsHudRenderer.renderEffects(matrixStack, tickDelta);
+                if(config.effectsLocation == Loc.Effects.STATUSHUD_EFFECTS_LEFT) {
+                    EffectsHudRenderer.renderEffects(matrixStack);
                 }
             }
         });

@@ -3,5 +3,14 @@
   "text.autoconfig.statushud.option.armorLocation": "Location of armor on screen",
   "text.autoconfig.statushud.option.armorEnabled": "Show armor on screen",
   "text.autoconfig.statushud.option.effectsLocation": "Location of status effects on screen",
-  "text.autoconfig.statushud.option.effectsEnabled": "Show status effects on screen"
+  "text.autoconfig.statushud.option.effectsEnabled": "Show status effects on screen",
+  "text.autoconfig.statushud.option.renderArmorDurabilityWhenVertical": "Show armor durability when vertical",
+  "text.autoconfig.statushud.option.durabilityColor": "Durability color",
+  "STATUSHUD_ARMOR_TOP": "Top",
+  "STATUSHUD_ARMOR_LEFT": "Bottom Left",
+  "STATUSHUD_ARMOR_RIGHT": "Bottom Right",
+  "STATUSHUD_ARMOR_VERTICAL_LEFT": "Vertical Left",
+  "STATUSHUD_ARMOR_VERTICAL_RIGHT": "Vertical Right",
+  "STATUSHUD_EFFECTS_LEFT": "Left",
+  "STATUSHUD_EFFECTS_RIGHT": "Right"
 }
