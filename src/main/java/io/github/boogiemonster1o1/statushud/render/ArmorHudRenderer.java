@@ -34,7 +34,7 @@ public final class ArmorHudRenderer {
                 RenderUtils.renderHotbarItem(q + 50, topOffset.get(), tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
                 if (StatusHud.config.renderArmorDurability) {
                     String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getDamage());
-                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage, MinecraftClient.getInstance().getWindow().getScaledWidth() - (damage.length() * 5) - 25, topOffset.get() +  5, StatusHud.config.durabilityColor);
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage, q + 50, topOffset.get() + 20, StatusHud.config.durabilityColor);
                 }
             }
         }
