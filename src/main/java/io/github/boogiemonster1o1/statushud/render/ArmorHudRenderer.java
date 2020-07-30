@@ -13,7 +13,11 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public final class ArmorHudRenderer {
-    public static void renderArmorAtTop(float tickDelta) {
+
+    public static int rainbowColor = 0x000000;
+    public static boolean reverse = false;
+
+    public static void renderArmorAtTop(MatrixStack matrices, float tickDelta) {
         if (MinecraftClient.getInstance().player != null) {
             int i = MinecraftClient.getInstance().getWindow().getScaledWidth() / 2;
             int p;
@@ -28,8 +32,13 @@ public final class ArmorHudRenderer {
             for(p = 0; p < 4; ++p) {
                 q = i - 90 + p * 20 + 2;
                 RenderUtils.renderHotbarItem(q + 50, topOffset.get(), tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                if (StatusHud.config.renderArmorDurability) {
+                    String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getDamage());
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage, MinecraftClient.getInstance().getWindow().getScaledWidth() - (damage.length() * 5) - 25, topOffset.get() +  5, StatusHud.config.durabilityColor);
+                }
             }
         }
+        updateColor();
     }
 
     public static void renderArmorAtBottomRight(MatrixStack matrices, float tickDelta) {
@@ -44,6 +53,7 @@ public final class ArmorHudRenderer {
                 renderDurabilityAtBottom(matrices, q, r, p);
             }
         }
+        updateColor();
     }
 
     public static void renderArmorAtBottomLeft(MatrixStack matrices, float tickDelta) {
@@ -57,6 +67,7 @@ public final class ArmorHudRenderer {
                 renderDurabilityAtBottom(matrices, q, r, p);
             }
         }
+        updateColor();
     }
 
     public static void renderArmorVerticalAtRight(MatrixStack matrices, float tickDelta) {
@@ -72,6 +83,7 @@ public final class ArmorHudRenderer {
                 }
             }
         }
+        updateColor();
     }
 
     public static void renderArmorVerticalAtLeft(MatrixStack matrices, float tickDelta) {
@@ -86,12 +98,30 @@ public final class ArmorHudRenderer {
                 }
             }
         }
+        updateColor();
     }
 
     private static void renderDurabilityAtBottom(MatrixStack matrices, int q, int r, int p) {
         if (StatusHud.config.renderArmorDurability && MinecraftClient.getInstance().player != null) {
             String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(p).getDamage());
             MinecraftClient.getInstance().textRenderer.draw(matrices, damage, q, r - 10, StatusHud.config.durabilityColor);
+        }
+        updateColor();
+    }
+
+    private static void updateColor() {
+        if(rainbowColor == 0xFFFFFF) {
+            reverse = true;
+        }
+        else if(rainbowColor == 0x000000) {
+            reverse = false;
+        }
+
+        if (reverse) {
+            rainbowColor--;
+        }
+        else {
+            rainbowColor++;
         }
     }
 }

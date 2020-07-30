@@ -30,7 +30,7 @@ public class StatusHud implements ClientModInitializer {
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             if(config.armorEnabled) {
                 if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP) {
-                    ArmorHudRenderer.renderArmorAtTop(tickDelta);
+                    ArmorHudRenderer.renderArmorAtTop(matrixStack, tickDelta);
                 } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_RIGHT) {
                     ArmorHudRenderer.renderArmorAtBottomRight(matrixStack, tickDelta);
                 } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_LEFT) {
