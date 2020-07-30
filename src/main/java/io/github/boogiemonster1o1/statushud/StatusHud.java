@@ -35,9 +35,9 @@ public class StatusHud implements ClientModInitializer {
                     ArmorHudRenderer.renderArmorAtBottomRight(tickDelta);
                 } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_LEFT) {
                     ArmorHudRenderer.renderArmorAtBottomLeft(tickDelta);
-                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_LEFT) {
-                    ArmorHudRenderer.renderArmorVerticalAtLeft(matrixStack, tickDelta);
                 } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_RIGHT) {
+                    ArmorHudRenderer.renderArmorVerticalAtLeft(matrixStack, tickDelta);
+                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_LEFT) {
                     ArmorHudRenderer.renderArmorVerticalAtRight(matrixStack, tickDelta);
                 }
             }
