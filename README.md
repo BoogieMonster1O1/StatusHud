@@ -1,3 +1,3 @@
 # StatusHud
 
-yes
+https://www.curseforge.com/minecraft/mc-mods/statushud
