@@ -1,9 +1,7 @@
 {
   "text.autoconfig.statushud.title": "StatusHud Configuration",
   "text.autoconfig.statushud.option.armorLocation": "Location of armor on hud",
-  "text.autoconfig.statushud.option.armorEnabled": "Show armor on screen",
   "text.autoconfig.statushud.option.effectsLocation": "Location of status effects on hud",
-  "text.autoconfig.statushud.option.effectsEnabled": "Show status effects on hud",
   "text.autoconfig.statushud.option.renderArmorDurability": "Show armor durability",
   "text.autoconfig.statushud.option.durabilityColor": "Durability color",
   "STATUSHUD_ARMOR_TOP": "Top",
@@ -12,5 +10,14 @@
   "STATUSHUD_ARMOR_VERTICAL_LEFT": "Vertical Left",
   "STATUSHUD_ARMOR_VERTICAL_RIGHT": "Vertical Right",
   "STATUSHUD_EFFECTS_LEFT": "Left",
-  "STATUSHUD_EFFECTS_RIGHT": "Right"
+  "STATUSHUD_EFFECTS_RIGHT": "Right",
+  "STATUSHUD_ARMOR_TOP_RIGHT": "Top Right",
+  "STATUSHUD_ARMOR_TOP_LEFT": "Top Left",
+  "STATUSHUD_DO_NOT_SHOW": "Do not show",
+  "text.autoconfig.statushud.option.offsets": "Rendering Offsets",
+  "text.autoconfig.statushud.option.offsets.@Tooltip": "Specifies the number of pixels to move when rendering. Use with caution ;p",
+  "text.autoconfig.statushud.option.offsets.topArmorOffsetX": "Top Armor Offset X",
+  "text.autoconfig.statushud.option.offsets.bottomArmorOffsetX": "Bottom Armor Offset X",
+  "text.autoconfig.statushud.option.offsets.verticalArmorOffsetY": "Vertical Armor Offset Y",
+  "text.autoconfig.statushud.option.offsets.effectOffsetX": "Status Effect Offset X"
 }

@@ -25,7 +25,7 @@ public class InGameHudMixin {
 
     @Inject(at = @At("HEAD"), method = "renderStatusEffectOverlay", cancellable = true)
     public void injectRenderStatusEffectOverlay(MatrixStack matrixStack, CallbackInfo ci) {
-        if(StatusHud.config.effectsLocation != Loc.Effects.STATUSHUD_EFFECTS_RIGHT || !(StatusHud.config.effectsEnabled)) {
+        if(StatusHud.config.effectsLocation != Loc.Effects.STATUSHUD_EFFECTS_RIGHT) {
             ci.cancel();
         }
     }

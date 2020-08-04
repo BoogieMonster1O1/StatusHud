@@ -28,23 +28,24 @@ public class StatusHud implements ClientModInitializer {
         StatusHud.config = AutoConfig.getConfigHolder(StatusHudConfig.class).getConfig();
 
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
-            if(config.armorEnabled) {
-                if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP) {
-                    ArmorHudRenderer.renderArmorAtTop(matrixStack, tickDelta);
-                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_RIGHT) {
-                    ArmorHudRenderer.renderArmorAtBottomRight(matrixStack, tickDelta);
-                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_LEFT) {
-                    ArmorHudRenderer.renderArmorAtBottomLeft(matrixStack, tickDelta);
-                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_RIGHT) {
-                    ArmorHudRenderer.renderArmorVerticalAtLeft(matrixStack, tickDelta);
-                } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_LEFT) {
-                    ArmorHudRenderer.renderArmorVerticalAtRight(matrixStack, tickDelta);
-                }
+            if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP) {
+                ArmorHudRenderer.renderArmorAtTop(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_RIGHT) {
+                ArmorHudRenderer.renderArmorAtBottomRight(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_LEFT) {
+                ArmorHudRenderer.renderArmorAtBottomLeft(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_LEFT) {
+                ArmorHudRenderer.renderArmorVerticalAtLeft(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_VERTICAL_RIGHT) {
+                ArmorHudRenderer.renderArmorVerticalAtRight(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP_LEFT) {
+                ArmorHudRenderer.renderArmorAtTopLeft(matrixStack, tickDelta);
+            } else if(config.armorLocation == Loc.Armor.STATUSHUD_ARMOR_TOP_RIGHT) {
+                ArmorHudRenderer.renderArmorAtTopRight(matrixStack, tickDelta);
             }
-            if(config.effectsEnabled) {
-                if(config.effectsLocation == Loc.Effects.STATUSHUD_EFFECTS_LEFT) {
-                    EffectsHudRenderer.renderEffects(matrixStack);
-                }
+
+            if(config.effectsLocation == Loc.Effects.STATUSHUD_EFFECTS_LEFT) {
+                EffectsHudRenderer.renderEffects(matrixStack);
             }
         });
     }

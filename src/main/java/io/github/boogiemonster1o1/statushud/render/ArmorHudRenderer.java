@@ -41,6 +41,40 @@ public final class ArmorHudRenderer {
         updateColor();
     }
 
+    public static void renderArmorAtTopLeft(MatrixStack matrices, float tickDelta) {
+        if (MinecraftClient.getInstance().player != null) {
+            int i = 2;
+            int p;
+            int q;
+            for(p = 0; p < 4; ++p) {
+                q = i - 50 + p * 20 + 2;
+                RenderUtils.renderHotbarItem(q + 50, 0, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                if (StatusHud.config.renderArmorDurability) {
+                    String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(3 - p).getDamage());
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage, q + 50, 20, StatusHud.config.durabilityColor);
+                }
+            }
+        }
+        updateColor();
+    }
+
+    public static void renderArmorAtTopRight(MatrixStack matrices, float tickDelta) {
+        if (MinecraftClient.getInstance().player != null) {
+            int i = MinecraftClient.getInstance().getWindow().getScaledWidth();
+            int p;
+            int q;
+            for(p = 0; p < 4; ++p) {
+                q = i - 70 - p * 20 - 2;
+                RenderUtils.renderHotbarItem(q + 50, 0, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(p));
+                if (StatusHud.config.renderArmorDurability) {
+                    String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(p).getDamage());
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage, q + 50, 20, StatusHud.config.durabilityColor);
+                }
+            }
+        }
+        updateColor();
+    }
+
     public static void renderArmorAtBottomRight(MatrixStack matrices, float tickDelta) {
         if (MinecraftClient.getInstance().player != null) {
             int i = MinecraftClient.getInstance().getWindow().getScaledWidth() / 2;
@@ -49,7 +83,7 @@ public final class ArmorHudRenderer {
             int r = j - 16 - 3;;
             for(int p = 0; p < 4; ++p) {
                 q = i + 145 + p * 20 + 2;
-                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(p));
                 renderDurabilityAtBottom(matrices, q, r, p);
             }
         }
@@ -94,7 +128,7 @@ public final class ArmorHudRenderer {
                 RenderUtils.renderHotbarItem(0, j + o, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(p));
                 if (StatusHud.config.renderArmorDurability) {
                     String damage = String.valueOf(MinecraftClient.getInstance().player.inventory.armor.get(p).getMaxDamage() - MinecraftClient.getInstance().player.inventory.armor.get(p).getDamage());
-                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage,  10, j + o + 5, StatusHud.config.durabilityColor);
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, damage,  22, j + o + 5, StatusHud.config.durabilityColor);
                 }
             }
         }

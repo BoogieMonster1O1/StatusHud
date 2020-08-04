@@ -7,18 +7,25 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "statushud")
 public class StatusHudConfig implements ConfigData {
-    public boolean armorEnabled = true;
-
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public Loc.Armor armorLocation = Loc.Armor.STATUSHUD_ARMOR_TOP;
 
     public boolean renderArmorDurability = false;
 
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    public Loc.Effects effectsLocation = Loc.Effects.STATUSHUD_EFFECTS_LEFT;
+
     @ConfigEntry.ColorPicker
     public int durabilityColor = 0x000000;
 
-    public boolean effectsEnabled = true;
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.CollapsibleObject
+    public Offsets offsets = new Offsets();
 
-    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public Loc.Effects effectsLocation = Loc.Effects.STATUSHUD_EFFECTS_LEFT;
+    public static class Offsets {
+        public int topArmorOffsetX = 0;
+        public int bottomArmorOffsetX = 0;
+        public int verticalArmorOffsetY = 0;
+        public int effectOffsetX = 0;
+    }
 }
