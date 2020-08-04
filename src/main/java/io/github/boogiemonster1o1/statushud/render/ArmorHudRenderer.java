@@ -83,8 +83,8 @@ public final class ArmorHudRenderer {
             int r = j - 16 - 3;;
             for(int p = 0; p < 4; ++p) {
                 q = i + 145 + p * 20 + 2;
-                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(p));
-                renderDurabilityAtBottom(matrices, q, r, p);
+                RenderUtils.renderHotbarItem(q, r, tickDelta, MinecraftClient.getInstance().player, MinecraftClient.getInstance().player.inventory.armor.get(3 - p));
+                renderDurabilityAtBottom(matrices, q, r, 3 - p);
             }
         }
         updateColor();
