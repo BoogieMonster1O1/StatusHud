@@ -7,7 +7,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "statushud")
 public class StatusHudConfig implements ConfigData {
-    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.DROPDOWN)
     public Loc.Armor armorLocation = Loc.Armor.STATUSHUD_ARMOR_TOP;
 
     public boolean renderArmorDurability = false;
@@ -26,6 +26,5 @@ public class StatusHudConfig implements ConfigData {
         public int topArmorOffsetX = 0;
         public int bottomArmorOffsetX = 0;
         public int verticalArmorOffsetY = 0;
-        public int effectOffsetX = 0;
     }
 }

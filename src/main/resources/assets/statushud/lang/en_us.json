@@ -19,5 +19,6 @@
   "text.autoconfig.statushud.option.offsets.topArmorOffsetX": "Top Armor Offset X",
   "text.autoconfig.statushud.option.offsets.bottomArmorOffsetX": "Bottom Armor Offset X",
   "text.autoconfig.statushud.option.offsets.verticalArmorOffsetY": "Vertical Armor Offset Y",
-  "text.autoconfig.statushud.option.offsets.effectOffsetX": "Status Effect Offset X"
+  "text.autoconfig.statushud.option.rainbowColors": "Rainbow text",
+  "text.autoconfig.statushud.option.rainbowColors.@Tooltip": "Will override Durability color"
 }
